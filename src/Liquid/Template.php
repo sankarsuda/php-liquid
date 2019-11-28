@@ -25,27 +25,27 @@ class Template
 	/**
 	 * @var Document The root of the node tree
 	 */
-	private $root;
+	protected $root;
 
 	/**
 	 * @var FileSystem The file system to use for includes
 	 */
-	private $fileSystem;
+	protected $fileSystem;
 
 	/**
 	 * @var array Globally included filters
 	 */
-	private $filters = array();
+	protected $filters = array();
 
 	/**
 	 * @var array Custom tags
 	 */
-	private static $tags = array();
+	protected static $tags = array();
 
 	/**
 	 * @var Cache
 	 */
-	private static $cache;
+	protected static $cache;
 
 	/**
 	 * Constructor.

@@ -161,7 +161,7 @@ class Context
 	 * @throws LiquidException
 	 * @return mixed
 	 */
-	private function resolve($key) {
+	protected function resolve($key) {
 		// This shouldn't happen
 		if (is_array($key)) {
 			throw new LiquidException("Cannot resolve arrays as key");
@@ -205,7 +205,7 @@ class Context
 	 *
 	 * @return mixed
 	 */
-	private function fetch($key) {
+	protected function fetch($key) {
 		// TagDecrement depends on environments being checked before assigns
 		foreach ($this->environments as $environment) {
 			if (array_key_exists($key, $environment)) {
@@ -236,7 +236,7 @@ class Context
 	 * @throws LiquidException
 	 * @return mixed
 	 */
-	private function variable($key) {
+	protected function variable($key) {
 		if (!preg_match_all("/(\[?[a-zA-Z0-9\s_-]+\]?)/", $key, $matches)) {
 			return null;
 		}
